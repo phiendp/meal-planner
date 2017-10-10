@@ -56,7 +56,7 @@ function calendar(state=initialCalendarState, action) {
       }
      }
 
-    case REMOVE_FROM_CALENDAR {
+    case REMOVE_FROM_CALENDAR:
       return {
         ...state,
         [day]: {
@@ -64,7 +64,6 @@ function calendar(state=initialCalendarState, action) {
           [meal]: null,
         }
       }       
-    }
 
     default:
       return state
