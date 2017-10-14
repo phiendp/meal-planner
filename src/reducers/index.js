@@ -43,7 +43,23 @@ const initialCalendarState = {
 }
 
 
-function calendar(state=initialCalendarState, action) {
+function food (state = {}, action) {
+  switch(action.type) {
+    case ADD_RECIPE:
+      const { recipe } = action
+
+      return {
+        ...state,
+        [recipe.label]: recipe
+      }
+
+    default:
+      return state
+  }
+}
+
+
+function calendar(state = initialCalendarState, action) {
   const { day, recipe, meal } = action
 
   switch(action.type) {
